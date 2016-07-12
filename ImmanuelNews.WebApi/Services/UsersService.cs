@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using ImmanuelNews.WebApi.Models;
-using ImmanuelNews.WebApi.Repository;
+using ImmanuelNews.WebApi.Repositories;
 
 namespace ImmanuelNews.WebApi.Services
 {
     public class UsersService
     {
-
-        UsersRepository usersRepository = new UsersRepository();
+        private readonly UsersRepository _usersRepository = new UsersRepository();
 
         public List<User> GetUsers()
         {
-            return usersRepository.GetUsers();
+            return _usersRepository.GetUsers();
+        }
+
+        public User GetUserById(int id)
+        {
+            return _usersRepository.GetUserById(id);
         }
     }
 }

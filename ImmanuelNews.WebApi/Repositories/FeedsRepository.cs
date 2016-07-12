@@ -5,9 +5,9 @@ using System.Linq;
 using System.Web;
 using ImmanuelNews.WebApi.Models;
 
-namespace ImmanuelNews.WebApi.Repository
+namespace ImmanuelNews.WebApi.Repositories
 {
-    public class FeedsRepository: ImmanuelNewsRepository
+    public class FeedsRepository: AbstractRepository
     {
         public List<Feed> GetFeeds()
         {

@@ -198,11 +198,11 @@
     <Compile Include="Models\Feed.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\FeedsFakeRepository.cs" />
-    <Compile Include="Repository\FeedsRepository.cs" />
-    <Compile Include="Repository\ImmanuelNewsRepository.cs" />
-    <Compile Include="Repository\UsersFakeRepository.cs" />
-    <Compile Include="Repository\UsersRepository.cs" />
+    <Compile Include="Repositories\FeedsFakeRepository.cs" />
+    <Compile Include="Repositories\FeedsRepository.cs" />
+    <Compile Include="Repositories\AbstractRepository.cs" />
+    <Compile Include="Repositories\UsersFakeRepository.cs" />
+    <Compile Include="Repositories\UsersRepository.cs" />
     <Compile Include="Services\FeedsService.cs" />
     <Compile Include="Services\UsersService.cs" />
   </ItemGroup>

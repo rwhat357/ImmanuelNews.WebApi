@@ -13,12 +13,12 @@ namespace ImmanuelNews.WebApi.Controllers
 {
     public class FeedsController : ApiController
     {
-        FeedsService feedService = new FeedsService();
+        private readonly FeedsService _feedService = new FeedsService();
 
         // GET api/feeds
         public List<Feed> Get()
         {
-            return feedService.GetFeeds();
+            return _feedService.GetFeeds();
             //return new string[] { "value1", "value2", matchingPerson.Firstname, matchingPerson.Lastname };
         }
 

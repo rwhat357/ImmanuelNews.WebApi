@@ -5,9 +5,9 @@ using System.Linq;
 using System.Web;
 using ImmanuelNews.WebApi.Models;
 
-namespace ImmanuelNews.WebApi.Repository
+namespace ImmanuelNews.WebApi.Repositories
 {
-    public class UsersRepository: ImmanuelNewsRepository
+    public class UsersRepository: AbstractRepository
     {
         public List<User> GetUsers()
         {
@@ -38,6 +38,11 @@ namespace ImmanuelNews.WebApi.Repository
             }
 
             return users;
+        }
+
+        public User GetUserById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

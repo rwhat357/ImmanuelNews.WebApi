@@ -5,11 +5,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace ImmanuelNews.WebApi.Repository
+namespace ImmanuelNews.WebApi.Repositories
 {
-    public class ImmanuelNewsRepository
+    public abstract class AbstractRepository
     {
-        public readonly string ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        protected readonly string ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
         // Returns the a string from the column or 0 if it's null
         public string SafeGetString(SqlDataReader reader, string fieldName)
