@@ -18,14 +18,19 @@ namespace ImmanuelNews.WebApi.Controllers
         // GET api/feeds
         public List<Feed> Get()
         {
-            return _feedService.GetFeeds();
+            return _feedService.GetList();
             //return new string[] { "value1", "value2", matchingPerson.Firstname, matchingPerson.Lastname };
         }
 
         // GET api/feeds/5
-        public string Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return "value";
+            Feed feed = _feedService.GetById(id);
+            if (feed == null)
+            {
+                return NotFound(); // Returns a NotFoundResult
+            }
+            return Ok(feed);  // Returns an OkNegotiatedContentResult
         }
 
         // POST api/feeds

@@ -108,5 +108,15 @@ namespace ImmanuelNews.WebApi.Areas.HelpPage
 
             return type.FullName;
         }
+
+        public string GetResponseDocumentation(HttpActionDescriptor actionDescriptor)
+        {
+            return "";
+        }
+
+        public string GetDocumentation(HttpControllerDescriptor controllerDescriptor)
+        {
+            return "";
+        }
     }
 }

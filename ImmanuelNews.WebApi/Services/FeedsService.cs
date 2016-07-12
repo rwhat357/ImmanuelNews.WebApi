@@ -11,9 +11,14 @@ namespace ImmanuelNews.WebApi.Services
     {
         private readonly FeedsRepository _feedsRepository = new FeedsRepository();
 
-        public List<Feed> GetFeeds()
+        public List<Feed> GetList()
         {
-            return _feedsRepository.GetFeeds();
+            return _feedsRepository.GetList();
+        }
+
+        public Feed GetById(int id)
+        {
+            return _feedsRepository.GetById(id);
         }
     }
 }
