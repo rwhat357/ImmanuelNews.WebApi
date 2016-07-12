@@ -1,37 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using ImmanuelNews.WebApi.Models;
+using ImmanuelNews.WebApi.Services;
 
 namespace ImmanuelNews.WebApi.Controllers
 {
-    public class ValuesController : ApiController
+    public class UsersController : ApiController
     {
-        // GET api/values
-        public IEnumerable<string> Get()
+        UsersService userService = new UsersService();
+
+        // GET api/users
+        public IEnumerable<User> Get()
         {
-            return new string[] { "value1", "value2" };
+            return userService.GetUsers();
         }
 
-        // GET api/values/5
+        // GET api/users/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/values
+        // POST api/users
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT api/values/5
+        // PUT api/users/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE api/values/5
+        // DELETE api/users/5
         public void Delete(int id)
         {
         }
