@@ -18,13 +18,13 @@ namespace ImmanuelNews.WebApi.Controllers
         // GET api/users
         public IEnumerable<User> Get()
         {
-            return _userService.GetUsers();
+            return _userService.GetList();
         }
 
         // GET api/users/5
         public User Get(int id)
         {
-            return _userService.GetUserById(id);
+            return _userService.GetById(id);
         }
 
         // POST api/users

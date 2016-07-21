@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ImmanuelNews.WebApi.Helpers;
 using ImmanuelNews.WebApi.Models;
 using ImmanuelNews.WebApi.Repositories;
 
@@ -10,15 +11,22 @@ namespace ImmanuelNews.WebApi.Services
     public class UsersService
     {
         private readonly UsersRepository _usersRepository = new UsersRepository();
+        private readonly UsersFakeRepository _usersFakeRepository = new UsersFakeRepository();
 
-        public List<User> GetUsers()
+        public List<User> GetList()
         {
-            return _usersRepository.GetUsers();
+            if (FeatureActivator.EnableFakeRepositories)
+                return _usersFakeRepository.GetList();
+
+            return _usersRepository.GetList();
         }
 
-        public User GetUserById(int id)
+        public User GetById(int id)
         {
-            return _usersRepository.GetUserById(id);
+            if (FeatureActivator.EnableFakeRepositories)
+                return _usersFakeRepository.GetById(id);
+
+            return _usersRepository.GetById(id);
         }
     }
 }

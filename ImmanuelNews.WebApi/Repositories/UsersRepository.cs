@@ -9,7 +9,7 @@ namespace ImmanuelNews.WebApi.Repositories
 {
     public class UsersRepository: AbstractRepository
     {
-        public List<User> GetUsers()
+        public List<User> GetList()
         {
             var users = new List<User>();
 
@@ -40,7 +40,7 @@ namespace ImmanuelNews.WebApi.Repositories
             return users;
         }
 
-        public User GetUserById(int id)
+        public User GetById(int id)
         {
             throw new NotImplementedException();
         }
