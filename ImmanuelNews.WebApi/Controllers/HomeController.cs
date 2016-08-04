@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 using System.Web.Mvc;
-using System.Configuration;
 
 namespace ImmanuelNews.WebApi.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private readonly string _swaggerUrl = "http://localhost:51057/swagger";
+
+        [Route("GoToSwaggerPage")]
+        public ActionResult GoToSwaggerPage()
         {
-            return View();
+            return RedirectPermanent(_swaggerUrl);
         }
     }
 }
