@@ -14,3 +14,4 @@ namespace ImmanuelNews.WebApi.Models
         public string Password { get; set; }
     }
 }
+

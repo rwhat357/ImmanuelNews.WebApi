@@ -1,3 +1,6 @@
+-- First Create a DB locally and name it aspnet-ImmanuelNews.WebApi-20160708145718
+-- Run the db in sql server express before running these scripts
+
 -- CREATE TABLES
 
 CREATE TABLE Users

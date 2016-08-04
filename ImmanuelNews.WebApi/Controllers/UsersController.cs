@@ -28,8 +28,10 @@ namespace ImmanuelNews.WebApi.Controllers
         }
 
         // POST api/users
-        public void Post([FromBody]string value)
+        public User Post([FromBody]User user)
         {
+            
+            return user;
         }
 
         // PUT api/users/5
